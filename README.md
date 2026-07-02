@@ -1,2 +1,2 @@
-# creatorssubs
+# creatorsubs
 Creator Subs
