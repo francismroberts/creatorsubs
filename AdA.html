@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Snapchat Creator Subscriptions — Turn Loyal Fans Into Monthly Income</title>
 <meta name="description" content="See how Snapchat Creator Subscriptions could turn your most loyal fans into predictable monthly income.">
 <meta name="theme-color" content="#060606">
@@ -145,6 +145,144 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;heigh
 .pgnav-menu a:last-child{border-bottom:none;}
 .pgnav-menu a:hover{background:rgba(255,252,0,.08);color:#FFFC00;}
 .pgnav-menu a.current{color:#FFFC00;font-weight:700;}
+
+
+/* =========================================================
+   MOBILE STORY FIT PATCH — generated for no-scroll mobile use
+   ========================================================= */
+:root{
+  --app-height:100dvh;
+  --story-max-w:430px;
+  --safe-top:env(safe-area-inset-top,0px);
+  --safe-bottom:env(safe-area-inset-bottom,0px);
+}
+html,body{
+  width:100% !important;
+  height:var(--app-height) !important;
+  min-height:0 !important;
+  max-height:var(--app-height) !important;
+  overflow:hidden !important;
+  overscroll-behavior:none !important;
+}
+body{
+  display:flex !important;
+  justify-content:center !important;
+  align-items:flex-start !important;
+  padding:0 !important;
+  margin:0 !important;
+  background:#060606 !important;
+}
+.frame-stage{
+  position:relative !important;
+  width:min(100vw,var(--story-max-w)) !important;
+  max-width:var(--story-max-w) !important;
+  height:var(--app-height) !important;
+  max-height:var(--app-height) !important;
+  margin:0 auto !important;
+  overflow:hidden !important;
+}
+.carousel-outer{
+  position:relative !important;
+  width:100% !important;
+  max-width:var(--story-max-w) !important;
+  height:100% !important;
+  max-height:100% !important;
+  margin:0 auto !important;
+  overflow:hidden !important;
+  transform:none !important;
+}
+.carousel-track{
+  height:100% !important;
+  min-height:0 !important;
+  align-items:stretch !important;
+}
+.frame{
+  height:100% !important;
+  min-height:0 !important;
+  max-height:100% !important;
+  overflow:hidden !important;
+}
+.dots{top:calc(14px + var(--safe-top)) !important;}
+.pgnav{position:fixed !important;top:calc(10px + var(--safe-top)) !important;left:10px !important;}
+.nav-btn{top:50% !important;}
+.nav-btn.prev{left:max(10px, env(safe-area-inset-left,0px)) !important;}
+.nav-btn.next{right:max(10px, env(safe-area-inset-right,0px)) !important;}
+.swipe-hint{bottom:calc(10px + var(--safe-bottom)) !important;}
+@media (min-width:768px){
+  :root{--story-max-w:430px;}
+  body{align-items:center !important;}
+  .frame-stage{height:min(var(--app-height),932px) !important;}
+}
+
+/* Ad A slide tuning */
+#f1,#f3,#f5{display:flex !important;flex-direction:column !important;}
+#f1 .f1-photo{aspect-ratio:auto !important;flex:0 0 clamp(300px,52%,466px) !important;height:auto !important;}
+#f1 .f1-img{background-position:center 0% !important;}
+#f1 .f1-content{flex:1 1 auto !important;min-height:0 !important;padding:clamp(16px,2.8vh,22px) 26px calc(clamp(18px,3vh,34px) + var(--safe-bottom)) !important;}
+#f1 .f1-eyebrow{margin-bottom:clamp(8px,1.6vh,14px) !important;}
+#f1 .f1-hl{font-size:clamp(40px,12.2vw,54px) !important;line-height:.88 !important;margin-bottom:clamp(8px,1.6vh,12px) !important;}
+#f1 .f1-body{font-size:clamp(11px,3.25vw,13px) !important;line-height:1.48 !important;}
+
+#f2 .f2-content{height:100% !important;min-height:0 !important;padding:calc(clamp(38px,6vh,50px) + var(--safe-top)) 24px calc(20px + var(--safe-bottom)) !important;}
+#f2 .f2-eyebrow{margin-bottom:6px !important;}
+#f2 .f2-hl{font-size:clamp(31px,9.8vw,38px) !important;margin-bottom:clamp(8px,1.5vh,14px) !important;}
+.idea-stack{gap:clamp(8px,1.5vh,12px) !important;margin-top:clamp(6px,1.4vh,10px) !important;}
+.idea-card{padding:clamp(12px,2vh,18px) 16px !important;gap:11px !important;}
+.idea-icon{width:clamp(32px,9.4vw,38px) !important;height:clamp(32px,9.4vw,38px) !important;}
+.idea-title{font-size:clamp(13px,4vw,15px) !important;}
+.idea-desc{font-size:clamp(10.5px,3.25vw,12px) !important;line-height:1.43 !important;}
+
+#f3 .f3-photo{aspect-ratio:auto !important;flex:0 0 clamp(300px,50%,430px) !important;height:auto !important;}
+#f3 .f3-bg{background-position:center 8% !important;}
+#f3 .f3-content{flex:1 1 auto !important;min-height:0 !important;padding:clamp(15px,2.6vh,22px) 24px calc(16px + var(--safe-bottom)) !important;display:flex !important;flex-direction:column !important;justify-content:flex-start !important;}
+#f3 .f3-tag{margin-bottom:clamp(7px,1.4vh,11px) !important;}
+#f3 .f3-hl{font-size:clamp(29px,9.4vw,36px) !important;line-height:.9 !important;margin-bottom:clamp(8px,1.5vh,12px) !important;}
+#f3 .f3-body{font-size:clamp(10.5px,3.15vw,13px) !important;line-height:1.42 !important;}
+
+#f4 .f4-content{height:100% !important;min-height:0 !important;padding:calc(clamp(34px,5.4vh,50px) + var(--safe-top)) 22px calc(14px + var(--safe-bottom)) !important;display:flex !important;flex-direction:column !important;gap:0 !important;}
+#f4 .f4-tag{margin-bottom:clamp(8px,1.5vh,12px) !important;}
+#f4 .f4-hl{font-size:clamp(32px,9.8vw,38px) !important;line-height:.9 !important;margin-bottom:clamp(6px,1.2vh,8px) !important;}
+#f4 .f4-sub{font-size:clamp(10.5px,3.1vw,12px) !important;line-height:1.35 !important;margin-bottom:clamp(8px,1.2vh,12px) !important;}
+.calc-box{flex:1 1 auto !important;min-height:0 !important;gap:clamp(8px,1.35vh,12px) !important;margin-top:0 !important;}
+.pill{gap:clamp(8px,1.3vh,12px) !important;padding:clamp(11px,1.8vh,14px) 14px !important;}
+.ctrl{gap:2px !important;}
+.ctrl label{font-size:clamp(9px,2.6vw,10px) !important;}
+.ctrl input[type=text]{font-size:clamp(14px,4.4vw,16px) !important;}
+input[type=range]{margin-top:4px !important;}
+.stage{padding:clamp(10px,1.7vh,14px) 12px !important;display:flex !important;flex-direction:column !important;align-items:center !important;gap:clamp(7px,1.2vh,9px) !important;}
+.stage .tile,.tile-annual{width:100% !important;max-width:270px !important;margin-inline:auto !important;}
+.tiles{width:100% !important;display:flex !important;flex-direction:column !important;gap:clamp(7px,1.15vh,9px) !important;margin-top:0 !important;align-items:center !important;}
+.tile{padding:clamp(8px,1.35vh,10px) 10px !important;}
+.stage-lbl,.tile-lbl{font-size:clamp(9px,2.6vw,10px) !important;margin:0 0 2px !important;}
+.stage-num{font-size:clamp(34px,11.8vw,46px) !important;}
+.tile-num{font-size:clamp(21px,6.6vw,28px) !important;color:#F4F2EA;}
+.tile-annual .tile-num{color:var(--y) !important;text-shadow:0 2px 14px rgba(255,252,0,.35),0 0 40px rgba(255,252,0,.18) !important;}
+.stage-caption{margin-top:0 !important;font-size:clamp(8px,2.2vw,9.5px) !important;line-height:1.25 !important;max-width:260px !important;}
+.calc-note{display:none !important;}
+
+#f5 .f5-photo{aspect-ratio:auto !important;flex:0 0 clamp(270px,40%,360px) !important;height:auto !important;background:#000 !important;}
+#f5 .f5-yellow{height:100% !important;}
+#f5 .f5-kaelyn{height:100% !important;background-size:cover !important;background-position:center 10% !important;}
+#f5 .f5-content{flex:1 1 auto !important;min-height:0 !important;padding:clamp(14px,2vh,22px) 24px calc(16px + var(--safe-bottom)) !important;display:flex !important;flex-direction:column !important;justify-content:flex-start !important;}
+#f5 .quote-block{padding:8px 11px !important;margin-bottom:clamp(9px,1.5vh,14px) !important;}
+#f5 .quote-text{font-size:clamp(10.5px,3.1vw,12px) !important;line-height:1.42 !important;}
+#f5 .quote-attr{font-size:clamp(8.5px,2.6vw,10px) !important;}
+#f5 .f5-hl{font-size:clamp(29px,9vw,38px) !important;line-height:.9 !important;margin-bottom:clamp(10px,1.6vh,16px) !important;}
+.cta-ghost{padding:clamp(9px,1.5vh,12px) 12px !important;font-size:clamp(11.5px,3.4vw,13px) !important;margin-bottom:8px !important;}
+.cta-primary{padding:clamp(11px,1.8vh,15px) 12px !important;font-size:clamp(13px,3.8vw,15px) !important;}
+@media (max-height:740px){
+  #f1 .f1-photo{flex-basis:45% !important;}
+  #f1 .f1-hl{font-size:clamp(36px,11.2vw,45px) !important;}
+  #f2 .f2-content{padding-top:38px !important;}
+  #f3 .f3-photo{flex-basis:43% !important;}
+  #f3 .f3-body{display:none !important;}
+  #f4 .f4-hl{font-size:clamp(29px,9vw,34px) !important;}
+  #f4 .f4-sub{display:none !important;}
+  #f5 .f5-photo{flex-basis:35% !important;}
+  #f5 .quote-block{padding:7px 10px !important;}
+  #f5 .f5-hl{font-size:clamp(27px,8.4vw,33px) !important;}
+}
+
 </style>
 </head>
 <body>
@@ -231,7 +369,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;heigh
       <div class="f4-top"></div>
       <div class="f4-content">
         <div class="f4-tag">Your community is ready</div>
-        <div class="f4-hl"><span class="y">2% of your<br>community.</span><br>Every month.<br>No algorithm.</div>
+        <div class="f4-hl"><span class="y">2% of your community.</span><br>Every month. No algorithm.</div>
         <p class="f4-sub">Your fans are already loyal. See what happens when they can show it.</p>
         <div class="calc-box">
           <div class="pill">
@@ -240,8 +378,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;heigh
             <div class="ctrl"><label for="cvr-out">Conversion Rate</label><input type="text" id="cvr-out" value="2.0%" inputmode="decimal"><input type="range" min="0.5" max="10" step="0.5" value="2" id="cvr"></div>
           </div>
           <div class="stage">
-            <div class="stage-lbl">Estimated Annual Income</div>
-            <div class="stage-num" id="r-annual">$120,715</div>
+            <div class="tile tile-annual"><div class="stage-lbl">Estimated Annual Income</div><div class="tile-num stage-num" id="r-annual">$120,715</div></div>
             <div class="tiles">
               <div class="tile tile-monthly"><div class="tile-num" id="r-monthly">$10,060</div><div class="tile-lbl">Monthly</div></div>
               <div class="tile tile-subs"><div class="tile-num" id="r-subs">3,360</div><div class="tile-lbl">Subscribers</div></div>
@@ -281,6 +418,20 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;heigh
   <div class="swipe-hint" id="hint" style="color:rgba(0,0,0,.3)">swipe or tap to advance</div>
 </div>
 </div>
+
+
+<script>
+(function(){
+  function setStoryViewport(){
+    var h = (window.visualViewport && window.visualViewport.height) ? window.visualViewport.height : window.innerHeight;
+    document.documentElement.style.setProperty('--app-height', Math.round(h) + 'px');
+  }
+  setStoryViewport();
+  window.addEventListener('resize', setStoryViewport, {passive:true});
+  window.addEventListener('orientationchange', function(){ setTimeout(setStoryViewport, 250); }, {passive:true});
+  if(window.visualViewport){ window.visualViewport.addEventListener('resize', setStoryViewport, {passive:true}); }
+})();
+</script>
 
 <script>
 var cur=0,tot=5,track=document.getElementById('track'),dotsEl=document.getElementById('dots').children,prev=document.getElementById('prev'),next=document.getElementById('next'),hint=document.getElementById('hint');
