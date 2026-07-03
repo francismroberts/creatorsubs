@@ -3,91 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Snapchat Creator Subscriptions — Income Calculator</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Snapchat Creator Subscriptions Income Calculator — Gradient Title & Highlight</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{--y:#FFFC00;--b:#000;--w:#fff;--g1:#111;--g2:#1a1a1a;--g3:#2a2a2a;--g4:#3a3a3a;}
-html,body{background:#060606;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;padding:16px;}
-.calc-wrap{width:100%;max-width:390px;background:var(--g1);border-radius:18px;padding:24px 22px;box-shadow:0 0 60px rgba(0,0,0,.8);}
-.calc-tag{display:inline-block;background:rgba(255,252,0,.1);border:1px solid rgba(255,252,0,.25);color:var(--y);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:12px;}
-.calc-hl{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;line-height:1;color:var(--w);text-transform:uppercase;margin-bottom:18px;}
-.calc-hl .y{color:var(--y);}
-.calc-box{background:var(--g2);border-radius:14px;padding:14px;border:1px solid var(--g3);display:flex;flex-direction:column;gap:11px;}
-.calc-row{display:flex;flex-direction:column;gap:4px;}
-.calc-lbl{display:flex;justify-content:space-between;}
-.calc-lbl-t{font-size:10px;color:rgba(255,255,255,.38);font-weight:500;}
-.calc-lbl-v{font-size:12px;font-weight:700;color:var(--y);}
-input[type=range]{-webkit-appearance:none;width:100%;height:3px;background:var(--g4);border-radius:2px;outline:none;cursor:pointer;}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--y);cursor:pointer;box-shadow:0 0 10px rgba(255,252,0,.45);border:2px solid var(--b);}
-input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--y);cursor:pointer;box-shadow:0 0 10px rgba(255,252,0,.45);border:2px solid var(--b);}
-.calc-div{height:1px;background:var(--g3);margin:2px 0;}
-.res-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
-.res-card{background:var(--g3);border-radius:10px;padding:9px 11px;border:1px solid var(--g4);}
-.res-card.hero{grid-column:1/-1;background:rgba(255,252,0,.07);border-color:rgba(255,252,0,.28);}
-.res-num{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:900;color:var(--w);line-height:1;margin-bottom:2px;}
-.res-card.hero .res-num{font-size:32px;color:var(--y);}
-.res-lbl{font-size:9px;color:rgba(255,255,255,.33);line-height:1.3;}
-.calc-footnote{font-size:11px;color:rgba(255,255,255,.45);line-height:1.55;margin-top:14px;font-style:italic;}
 
-/* ══ TABLET (600–1023px) ══ */
-@media (min-width:600px){
-  .calc-wrap{max-width:480px;padding:32px 30px;border-radius:22px;}
-  .calc-tag{font-size:11px;padding:5px 12px;margin-bottom:16px;}
-  .calc-hl{font-size:34px;margin-bottom:22px;}
-  .calc-box{padding:18px;gap:14px;}
-  .calc-lbl-t{font-size:11px;}
-  .calc-lbl-v{font-size:13px;}
-  .res-num{font-size:28px;}
-  .res-card.hero .res-num{font-size:38px;}
-  .res-lbl{font-size:10px;}
-  .calc-footnote{font-size:12px;margin-top:18px;}
+:root{--y:#FFFC00;}
+html,body{overflow-x:hidden;}
+body{background:#0a0a0a;font-family:'DM Sans',sans-serif;min-height:100vh;color:#fff;display:flex;align-items:center;justify-content:center;padding:20px;}
+@media(max-width:700px){body{align-items:flex-start;padding-top:36px;padding-bottom:36px;}}
+.outer{width:100%;max-width:940px;text-align:center;position:relative;}
+.outer::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:620px;height:380px;background:radial-gradient(ellipse, rgba(255,252,0,.12), transparent 72%);pointer-events:none;z-index:0;filter:blur(4px);}
+.outer > *{position:relative;z-index:1;}
+.kicker{margin:0 auto 28px;padding:22px 0;background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1);}
+.panel{background:#141414;border:1px solid #2c2c2c;border-radius:28px;padding:34px 34px 52px;text-align:center;position:relative;box-shadow:0 36px 84px rgba(0,0,0,.55);}
+.q{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:clamp(24px,6.2vw,40px);letter-spacing:-.005em;line-height:1.28;max-width:700px;margin:0 auto 26px;color:rgba(255,255,255,.87);text-shadow:0 4px 24px rgba(0,0,0,.4);}
+.tooltip{font-family:'DM Sans',sans-serif;font-weight:500;font-size:14px;color:rgba(255,255,255,.5);max-width:480px;margin:0 auto 16px;line-height:1.4;}
+.pill{display:flex;flex-direction:column;gap:22px;background:#1e1e1e;border:1px solid #363636;border-radius:20px;padding:28px 32px;box-shadow:0 28px 58px rgba(0,0,0,.6);margin:0 auto -34px;position:relative;z-index:2;text-align:left;}
+@media(min-width:640px){.pill{flex-direction:row;gap:34px;align-items:flex-end;}}
+.ctrl{flex:1;}
+.ctrl label{display:block;font-size:13px;letter-spacing:.02em;color:rgba(255,255,255,.82);margin-bottom:6px;font-weight:600;}
+@media(min-width:700px){.ctrl label{font-size:16px;}}
+.ctrl input[type=text]{background:none;border:none;border-bottom:1.5px dashed rgba(232,205,142,.4);color:#F4F2EA;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;font-variant-numeric:tabular-nums;padding:0 0 3px;cursor:text;transition:border-color .15s;}
+.ctrl input[type=text]:hover{border-bottom-color:rgba(232,205,142,.65);}
+.ctrl input[type=text]:focus{outline:none;border-bottom-style:solid;border-bottom-color:#E8CD8E;}
+#flw-out{width:10ch;}
+#cvr-out{width:6ch;}
+#prc-out{width:7ch;}
+input[type=range]{-webkit-appearance:none;width:100%;height:2px;background:#3a3a3a;border-radius:2px;margin-top:9px;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:15px;height:15px;border-radius:50%;background:#FFFC00;border:2px solid #000;cursor:pointer;box-shadow:0 0 8px rgba(255,252,0,.4);}
+input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;background:#FFFC00;border:2px solid #000;cursor:pointer;}
+.stage{background:#282828;border-radius:20px;padding:66px 28px 34px;}
+.stage-lbl{font-size:18px;letter-spacing:.01em;font-weight:600;color:rgba(255,255,255,.8);margin-bottom:16px;}
+.stage-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(42px,11.5vw,94px);letter-spacing:-.01em;color:#FFFC00;line-height:1;text-shadow:0 2px 20px rgba(255,252,0,.35), 0 0 70px rgba(255,252,0,.18);}
+.tiles{display:flex;gap:16px;justify-content:center;margin-top:30px;flex-wrap:wrap;align-items:stretch;}
+.tile{background:#141414;border:1px solid #2c2c2c;border-radius:12px;padding:16px 18px;flex:1 1 130px;min-width:110px;}
+.footnote{font-family:'DM Sans',sans-serif;font-size:11.5px;line-height:1.5;color:rgba(255,255,255,.4);max-width:400px;margin:26px auto 0;text-align:center;}
+.tile-num{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:31px;color:#F4F2EA;}
+.tile-lbl{font-size:14.5px;letter-spacing:.02em;color:rgba(255,255,255,.75);margin-top:5px;}
+
+.kicker-label{display:block;font-family:'Oswald',sans-serif;font-weight:600;font-size:22px;letter-spacing:.03em;color:rgba(255,252,0,.72);text-wrap:balance;}
+@media(min-width:700px){.kicker-label{font-size:26px;}}
+.q .y{font-weight:700;color:#FFFC00;text-shadow:0 0 20px rgba(255,252,0,.4), 0 0 46px rgba(255,252,0,.18);}
+
+@media(max-width:420px){
+  .kicker{padding:16px 14px;}
+  .kicker-label{font-size:17px;letter-spacing:.015em;line-height:1.35;}
+  .panel{padding:28px 18px 36px;}
+  .pill{padding:22px 20px;gap:18px;}
+  .stage{padding:44px 16px 26px;}
+  .stage-lbl{font-size:15px;}
+  .tooltip{font-size:13px;}
+  .tile{padding:14px 14px;}
+  .tile-num{font-size:24px;}
+  .tile-lbl{font-size:13px;}
+  .ctrl input[type=text]{font-size:19px;}
 }
 
-/* ══ DESKTOP (1024px+) ══ */
-@media (min-width:1024px){
-  .calc-wrap{max-width:440px;padding:34px 32px;box-shadow:0 0 80px rgba(0,0,0,.85);}
-  .calc-tag{font-size:11px;}
-  .calc-hl{font-size:32px;margin-bottom:20px;}
-  .calc-box{padding:16px;gap:12px;}
-  .res-num{font-size:26px;}
-  .res-card.hero .res-num{font-size:36px;}
-  input[type=range]::-webkit-slider-thumb{width:20px;height:20px;}
-  input[type=range]::-moz-range-thumb{width:20px;height:20px;}
-}
-</style>
-</head>
-<body>
-<div class="calc-wrap">
-  <div class="calc-tag">The math is simpler than you think</div>
-  <div class="calc-hl">What if <span class="y">a portion of your audience</span> paid you every single month?</div>
-  <div class="calc-box">
-    <div class="calc-row"><div class="calc-lbl"><span class="calc-lbl-t">Your Snapchat followers</span><span class="calc-lbl-v" id="flw-out">168,000</span></div><input type="range" min="10000" max="2000000" step="10000" value="168000" id="flw"></div>
-    <div class="calc-row"><div class="calc-lbl"><span class="calc-lbl-t">Follower conversion rate</span><span class="calc-lbl-v" id="cvr-out">2.0%</span></div><input type="range" min="0.5" max="10" step="0.5" value="2" id="cvr"></div>
-    <div class="calc-row"><div class="calc-lbl"><span class="calc-lbl-t">Subscription price</span><span class="calc-lbl-v" id="prc-out">$4.99 / mo</span></div><input type="range" min="299" max="999" step="100" value="499" id="prc"></div>
-    <div class="calc-div"></div>
-    <div class="res-grid">
-      <div class="res-card"><div class="res-num" id="r-subs">3,360</div><div class="res-lbl">paying subscribers</div></div>
-      <div class="res-card"><div class="res-num" id="r-monthly">$10,060</div><div class="res-lbl">monthly take-home</div></div>
-      <div class="res-card hero"><div class="res-num" id="r-annual">$120,715</div><div class="res-lbl">annualized income. Independent of any algorithm. Typical conversion range: 1–10%. We're modeling 2% — the conservative end.</div></div>
+</style><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+</head><body>
+<div class="outer">
+  <div class="kicker"><span class="kicker-label">Snapchat Creator Subscriptions Income Calculator</span></div>
+  <div class="panel">
+    <div class="q">How much could you earn from a small portion of your <span class="y">existing</span> audience?</div>
+    <div class="tooltip">Slide or type to see your potential earnings</div>
+    <div class="pill">
+      <div class="ctrl"><label for="flw-out">Snapchat Followers</label><input type="text" id="flw-out" value="168,000" inputmode="numeric"><input type="range" id="flw" min="10000" max="5000000" step="10000" value="168000"></div>
+      <div class="ctrl"><label for="prc-out">Subscription Price</label><input type="text" id="prc-out" value="$4.99" inputmode="decimal"><input type="range" id="prc" min="299" max="3000" step="100" value="499"></div>
+      <div class="ctrl"><label for="cvr-out">Conversion Rate</label><input type="text" id="cvr-out" value="2.0%" inputmode="decimal"><input type="range" id="cvr" min="0.5" max="10" step="0.5" value="2"></div>
+    </div>
+    <div class="stage">
+      <div class="stage-lbl">Estimated Annual Income</div>
+      <div class="stage-num" id="r-annual">$120,715</div>
+      <div class="tiles">
+        <div class="tile tile-subs"><div class="tile-num" id="r-subs">3,360</div><div class="tile-lbl">Subscribers</div></div>
+        <div class="tile tile-monthly"><div class="tile-num" id="r-monthly">$10,060</div><div class="tile-lbl">Monthly</div></div>
+      </div>
+      <div class="footnote">Estimates assume creators keep 40% of subscription revenue, after Snapchat's 30% platform fee and Apple's 30% App Store fee.</div>
     </div>
   </div>
-  <p class="calc-footnote">Creator Subscriptions turns the audience you've already built into a recurring income stream. One that belongs to you. Not the algorithm.</p>
 </div>
 <script>
+function $(id){return document.getElementById(id);}
 function fmt(n){return Math.round(n).toLocaleString('en-US');}
+function clamp(v,min,max){return Math.min(max,Math.max(min,v));}
+
 function calc(){
-  var f=parseInt(document.getElementById('flw').value),p=parseInt(document.getElementById('prc').value),c=parseFloat(document.getElementById('cvr').value);
-  document.getElementById('flw-out').textContent=fmt(f);
-  document.getElementById('prc-out').textContent='$'+(p/100).toFixed(2)+' / mo';
-  document.getElementById('cvr-out').textContent=c.toFixed(1)+'%';
-  var s=Math.round(f*(c/100)),net=s*(p/100)*.60,ann=net*12;
-  document.getElementById('r-subs').textContent=fmt(s);
-  document.getElementById('r-monthly').textContent='$'+fmt(net);
-  document.getElementById('r-annual').textContent='$'+fmt(ann);
+  var f=parseInt($('flw').value),p=parseInt($('prc').value),c=parseFloat($('cvr').value);
+  $('flw-out').value=fmt(f);
+  $('prc-out').value='$'+(p/100).toFixed(2);
+  $('cvr-out').value=c.toFixed(1)+'%';
+  var s=Math.round(f*(c/100)),net=s*(p/100)*.4,ann=net*12;
+  $('r-subs').textContent=fmt(s);
+  $('r-monthly').textContent='$'+fmt(net);
+  $('r-annual').textContent='$'+fmt(ann);
 }
-['flw','prc','cvr'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);});
+['flw','cvr','prc'].forEach(function(id){$(id).addEventListener('input',calc);});
+
+function bindTextInput(field,slider,parse,min,max){
+  field.addEventListener('focus',function(){this.select();});
+  function commit(){
+    var raw=parseFloat(String(field.value).replace(/[^0-9.]/g,''));
+    if(!isNaN(raw)){slider.value=clamp(parse(raw),min,max);}
+    calc();
+  }
+  field.addEventListener('blur',commit);
+  field.addEventListener('keydown',function(e){if(e.key==='Enter'){field.blur();}});
+}
+bindTextInput($('flw-out'),$('flw'),function(v){return v;},10000,5000000);
+bindTextInput($('cvr-out'),$('cvr'),function(v){return v;},0.5,10);
+bindTextInput($('prc-out'),$('prc'),function(v){return Math.round(v*100);},299,3000);
+
 calc();
 </script>
-</body>
-</html>
+</body></html>
