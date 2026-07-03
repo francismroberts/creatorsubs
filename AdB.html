@@ -191,9 +191,30 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;heigh
 .cta-primary:hover{box-shadow:0 0 22px rgba(255,252,0,.3);transform:translateY(-1px);}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 .carousel-outer{animation:fadeIn .5s ease;}
+
+.pgnav{position:fixed;top:10px;left:10px;z-index:99999;font-family:'DM Sans',sans-serif;}
+.pgnav-btn{background:transparent;border:none;padding:6px;cursor:pointer;display:flex;flex-direction:column;gap:4px;width:32px;height:32px;align-items:center;justify-content:center;}
+.pgnav-btn span{display:block;width:18px;height:2px;background:#FFFC00;border-radius:1px;transition:opacity .15s;}
+.pgnav-btn:hover span{opacity:.75;}
+.pgnav-menu{display:none;position:absolute;top:calc(100% + 4px);left:0;background:#141414;border:1px solid rgba(255,255,255,.12);border-radius:10px;overflow:hidden;min-width:130px;box-shadow:0 10px 30px rgba(0,0,0,.5);}
+.pgnav-menu.open{display:block;}
+.pgnav-menu a{display:block;padding:9px 12px;font-size:13px;color:#F4F2EA;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.06);font-family:'DM Sans',sans-serif;}
+.pgnav-menu a:last-child{border-bottom:none;}
+.pgnav-menu a:hover{background:rgba(255,252,0,.08);color:#FFFC00;}
+.pgnav-menu a.current{color:#FFFC00;font-weight:700;}
 </style>
 </head>
 <body>
+<div class="pgnav">
+  <button class="pgnav-btn" id="pgnavBtn" aria-haspopup="true" aria-expanded="false" aria-label="Open page menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="pgnav-menu" id="pgnavMenu">
+    <a href="index.html">Calculator</a>
+    <a href="AdA.html">Ad A</a>
+    <a href="AdB.html" class="current">Ad B</a>
+  </div>
+</div>
 <div class="carousel-outer">
   <div class="carousel-track" id="track">
 
@@ -517,6 +538,18 @@ function runF2Cycle(onDone){
 }
 function startF2(){ if(f2Running) return; f2Running=true; runF2Cycle(function(){f2Running=false;}); }
 
+</script>
+<script>
+(function(){
+  var btn=document.getElementById('pgnavBtn'),menu=document.getElementById('pgnavMenu');
+  if(!btn||!menu)return;
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    var open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  document.addEventListener('click',function(){menu.classList.remove('open');btn.setAttribute('aria-expanded','false');});
+})();
 </script>
 </body>
 </html>

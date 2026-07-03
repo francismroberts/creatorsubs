@@ -60,8 +60,29 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
   .ctrl input[type=text]{font-size:19px;}
 }
 
+
+.pgnav{position:fixed;top:10px;left:10px;z-index:99999;font-family:'DM Sans',sans-serif;}
+.pgnav-btn{background:transparent;border:none;padding:6px;cursor:pointer;display:flex;flex-direction:column;gap:4px;width:32px;height:32px;align-items:center;justify-content:center;}
+.pgnav-btn span{display:block;width:18px;height:2px;background:#FFFC00;border-radius:1px;transition:opacity .15s;}
+.pgnav-btn:hover span{opacity:.75;}
+.pgnav-menu{display:none;position:absolute;top:calc(100% + 4px);left:0;background:#141414;border:1px solid rgba(255,255,255,.12);border-radius:10px;overflow:hidden;min-width:130px;box-shadow:0 10px 30px rgba(0,0,0,.5);}
+.pgnav-menu.open{display:block;}
+.pgnav-menu a{display:block;padding:9px 12px;font-size:13px;color:#F4F2EA;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.06);font-family:'DM Sans',sans-serif;}
+.pgnav-menu a:last-child{border-bottom:none;}
+.pgnav-menu a:hover{background:rgba(255,252,0,.08);color:#FFFC00;}
+.pgnav-menu a.current{color:#FFFC00;font-weight:700;}
 </style><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
 </head><body>
+<div class="pgnav">
+  <button class="pgnav-btn" id="pgnavBtn" aria-haspopup="true" aria-expanded="false" aria-label="Open page menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="pgnav-menu" id="pgnavMenu">
+    <a href="index.html" class="current">Calculator</a>
+    <a href="AdA.html">Ad A</a>
+    <a href="AdB.html">Ad B</a>
+  </div>
+</div>
 <div class="outer">
   <div class="kicker"><span class="kicker-label">Snapchat Creator Subscriptions Income Calculator</span></div>
   <div class="panel">
@@ -115,5 +136,17 @@ bindTextInput($('cvr-out'),$('cvr'),function(v){return v;},0.5,10);
 bindTextInput($('prc-out'),$('prc'),function(v){return Math.round(v*100);},299,3000);
 
 calc();
+</script>
+<script>
+(function(){
+  var btn=document.getElementById('pgnavBtn'),menu=document.getElementById('pgnavMenu');
+  if(!btn||!menu)return;
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    var open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  document.addEventListener('click',function(){menu.classList.remove('open');btn.setAttribute('aria-expanded','false');});
+})();
 </script>
 </body></html>
