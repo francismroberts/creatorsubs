@@ -283,6 +283,94 @@ input[type=range]{margin-top:4px !important;}
   #f5 .f5-hl{font-size:clamp(27px,8.4vw,33px) !important;}
 }
 
+
+
+/* === Francis mobile-fit refinement pass: no hint, slimmer arrows, calculator format === */
+.swipe-hint,#hint{display:none!important;visibility:hidden!important;opacity:0!important;}
+.nav-btn{
+  width:24px!important;
+  height:54px!important;
+  border-radius:14px!important;
+  top:50%!important;
+  transform:translateY(-50%)!important;
+  background:rgba(20,20,20,.22)!important;
+  border:1px solid rgba(255,255,255,.20)!important;
+  box-shadow:none!important;
+  opacity:.58!important;
+  backdrop-filter:blur(4px)!important;
+}
+.nav-btn:hover{opacity:.82!important;background:rgba(20,20,20,.34)!important;}
+.nav-btn.prev{left:3px!important;}
+.nav-btn.next{right:3px!important;}
+.nav-btn svg{width:13px!important;height:13px!important;}
+.dots{top:calc(env(safe-area-inset-top,0px) + 14px)!important;}
+.pgnav{top:calc(env(safe-area-inset-top,0px) + 8px)!important;}
+
+/* Calculator treatment aligned to the standalone calculator file */
+#f4 .calc-box{gap:0!important;margin-top:4px!important;flex:0 1 auto!important;}
+#f4 .pill{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:13px!important;
+  background:#1e1e1e!important;
+  border:1px solid #363636!important;
+  border-radius:20px!important;
+  padding:18px 20px!important;
+  box-shadow:0 20px 44px rgba(0,0,0,.48)!important;
+  margin:0 auto -24px!important;
+  position:relative!important;
+  z-index:2!important;
+  width:100%!important;
+  text-align:left!important;
+}
+#f4 .ctrl label{font-size:11px!important;color:rgba(255,255,255,.78)!important;margin-bottom:3px!important;}
+#f4 .ctrl input[type=text]{font-size:18px!important;color:#F4F2EA!important;}
+#f4 input[type=range]{margin-top:7px!important;}
+#f4 .stage{
+  background:#282828!important;
+  border-radius:20px!important;
+  padding:46px 18px 22px!important;
+  text-align:center!important;
+  box-shadow:none!important;
+}
+#f4 .tile-annual{background:transparent!important;border:none!important;border-radius:0!important;padding:0!important;width:100%!important;}
+#f4 .stage-lbl{font-size:13px!important;letter-spacing:.01em!important;font-weight:600!important;color:rgba(255,255,255,.78)!important;margin-bottom:8px!important;}
+#f4 .stage-num{font-size:clamp(42px,13vw,58px)!important;line-height:1!important;color:#FFFC00!important;text-shadow:0 2px 20px rgba(255,252,0,.35),0 0 54px rgba(255,252,0,.18)!important;}
+#f4 .tiles{display:flex!important;flex-direction:column!important;gap:10px!important;align-items:center!important;justify-content:center!important;margin-top:20px!important;}
+#f4 .tile:not(.tile-annual){width:min(100%,235px)!important;flex:none!important;background:#141414!important;border:1px solid #2c2c2c!important;border-radius:12px!important;padding:12px 14px!important;}
+#f4 .tile-num{font-size:25px!important;line-height:1!important;}
+#f4 .tile-lbl{font-size:13px!important;color:rgba(255,255,255,.74)!important;margin-top:5px!important;}
+#f4 .stage-caption{font-size:10px!important;color:rgba(255,255,255,.42)!important;line-height:1.35!important;margin-top:12px!important;}
+#f4 .calc-note,#f4 .f4-footnote{font-size:9.5px!important;line-height:1.35!important;color:rgba(255,255,255,.28)!important;margin-top:8px!important;}
+@media (max-height:760px){
+  .nav-btn{height:48px!important;width:22px!important;opacity:.48!important;}
+  #f4 .pill{padding:14px 16px!important;gap:10px!important;margin-bottom:-18px!important;}
+  #f4 .stage{padding:38px 14px 16px!important;}
+  #f4 .tiles{gap:8px!important;margin-top:14px!important;}
+  #f4 .tile:not(.tile-annual){padding:9px 12px!important;}
+  #f4 .stage-num{font-size:clamp(38px,12vw,50px)!important;}
+}
+
+/* Ad A slide-specific refinements */
+#f1{display:flex!important;flex-direction:column!important;}
+#f1 .f1-photo{height:45%!important;aspect-ratio:auto!important;flex:0 0 auto!important;}
+#f1 .f1-content{flex:1 1 auto!important;padding:18px 26px 28px!important;}
+#f1 .f1-hl{font-size:clamp(42px,14vw,54px)!important;margin-bottom:10px!important;}
+#f1 .f1-body{line-height:1.55!important;}
+#f4 .f4-content{height:100%!important;padding:48px 20px 14px!important;gap:0!important;}
+#f4 .f4-tag{margin-bottom:9px!important;}
+#f4 .f4-hl{font-size:clamp(31px,9.8vw,38px)!important;line-height:.94!important;margin-bottom:5px!important;}
+#f4 .f4-sub{font-size:11px!important;line-height:1.35!important;margin-bottom:10px!important;}
+@media (max-height:760px){
+  #f1 .f1-photo{height:41%!important;}
+  #f1 .f1-content{padding:14px 24px 22px!important;}
+  #f1 .f1-hl{font-size:clamp(38px,12.5vw,48px)!important;}
+  #f1 .f1-body{font-size:12px!important;line-height:1.42!important;}
+  #f4 .f4-content{padding:40px 18px 12px!important;}
+  #f4 .f4-hl{font-size:clamp(28px,8.8vw,34px)!important;}
+  #f4 .f4-sub{display:none!important;}
+}
+
 </style>
 </head>
 <body>
