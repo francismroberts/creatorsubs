@@ -3,13 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Snapchat Creator Subscriptions — Ad B: Belonging</title>
+<title>Snapchat Creator Subscriptions — Turn Loyal Fans Into Monthly Income</title>
+<meta name="description" content="See how Snapchat Creator Subscriptions could turn your most loyal fans into predictable monthly income.">
+<meta name="theme-color" content="#060606">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Snapchat Creator Subscriptions — Turn Loyal Fans Into Monthly Income">
+<meta property="og:description" content="See how Snapchat Creator Subscriptions could turn your most loyal fans into predictable monthly income.">
+<meta property="og:url" content="https://francismroberts.github.io/creatorsubs/AdA.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Snapchat Creator Subscriptions — Turn Loyal Fans Into Monthly Income">
+<meta name="twitter:description" content="See how Snapchat Creator Subscriptions could turn your most loyal fans into predictable monthly income.">
+<link rel="canonical" href="https://francismroberts.github.io/creatorsubs/AdA.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230a0a0a'/><text x='50' y='69' font-family='Arial,sans-serif' font-weight='900' font-size='58' fill='%23FFFC00' text-anchor='middle'>$</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{--y:#FFFC00;--b:#000;--w:#fff;--g1:#111;--g2:#1a1a1a;--g3:#2a2a2a;--g4:#3a3a3a;--green:#00D97E;--purple:#8B5CF6;}
 html,body{background:#060606;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;}
-.carousel-outer{width:390px;height:844px;position:relative;overflow:hidden;background:#000;box-shadow:0 0 60px rgba(0,0,0,.8);}
+.frame-stage{position:relative;width:calc(390px * min(1, 98vw / 390px, 98vh / 844px));height:calc(844px * min(1, 98vw / 390px, 98vh / 844px));width:calc(390px * min(1, 98vw / 390px, 98dvh / 844px));height:calc(844px * min(1, 98vw / 390px, 98dvh / 844px));}
+.carousel-outer{width:390px;height:844px;position:absolute;top:0;left:0;overflow:hidden;background:#000;box-shadow:0 0 60px rgba(0,0,0,.8);transform:scale(min(1, 98vw / 390px, 98vh / 844px));transform:scale(min(1, 98vw / 390px, 98dvh / 844px));transform-origin:top left;}
 .carousel-track{display:flex;width:calc(390px * 5);height:844px;transition:transform .38s cubic-bezier(.4,0,.2,1);}
 .frame{width:390px;height:844px;position:relative;overflow:hidden;flex-shrink:0;background:#000;}
 .dots{position:absolute;top:14px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:30;pointer-events:none;}
@@ -96,6 +108,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;heigh
 .tiles{display:flex;gap:8px;margin-top:14px;}
 .tile{flex:1;background:#1a1a1a;border:1px solid #2c2c2c;border-radius:10px;padding:10px 8px;}
 .tile-num{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;color:#F4F2EA;white-space:nowrap;overflow:hidden;max-width:100%;}
+.tile-monthly .tile-num{color:#FFFC00;text-shadow:0 0 8px rgba(255,252,0,.22);}
 .tile-lbl{font-size:10px;letter-spacing:.01em;color:rgba(255,255,255,.7);margin-top:3px;}
 .stage-caption{font-size:9.5px;color:rgba(255,255,255,.4);line-height:1.4;margin-top:12px;}
 .calc-note{font-size:9px;color:rgba(255,255,255,.18);margin-top:9px;line-height:1.5;text-align:center;}
@@ -142,6 +155,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;heigh
     <a href="AdB.html">Ad B</a>
   </div>
 </div>
+<div class="frame-stage">
 <div class="carousel-outer">
   <div class="carousel-track" id="track">
 
@@ -226,8 +240,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;heigh
             <div class="stage-lbl">Estimated Annual Income</div>
             <div class="stage-num" id="r-annual">$120,715</div>
             <div class="tiles">
-              <div class="tile tile-subs"><div class="tile-num" id="r-subs">3,360</div><div class="tile-lbl">Subscribers</div></div>
               <div class="tile tile-monthly"><div class="tile-num" id="r-monthly">$10,060</div><div class="tile-lbl">Monthly</div></div>
+              <div class="tile tile-subs"><div class="tile-num" id="r-subs">3,360</div><div class="tile-lbl">Subscribers</div></div>
             </div>
             <div class="stage-caption">From the community you already built.</div>
           </div>
@@ -263,6 +277,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;heigh
   <button class="nav-btn dark" id="prev" style="display:none"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
   <button class="nav-btn dark" id="next"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
   <div class="swipe-hint" id="hint" style="color:rgba(0,0,0,.3)">swipe or tap to advance</div>
+</div>
 </div>
 
 <script>
